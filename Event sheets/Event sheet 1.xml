@@ -10,7 +10,7 @@
             <actions>
                 <action id="-3" name="Set position" sid="897560631552753" type="camera">
                     <param id="0" name="X">player.x</param>
-                    <param id="1" name="Y">player.Y</param>
+                    <param id="1" name="Y">player.Y - 200</param>
                 </action>
             </actions>
         </event-block>
@@ -46,5 +46,16 @@
         </event-block>
         <event-group description="" sid="853090995758893" title="Final Boss" />
         <event-group description="" sid="776711612629645" title="Background/Platforms" />
+        <event-block sid="297038520532430">
+            <conditions>
+                <condition behavior="Pin" id="0" name="Is pinned" sid="832781884238518" type="Ground" />
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="495545971321434" type="Ground">
+                    <param id="0" name="Pin to">Ground</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
