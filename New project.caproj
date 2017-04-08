@@ -221,13 +221,6 @@
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="252206624655261" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
-                <animation framecount="5" loop="0" name="someAnimation" pingpong="0" repeatcount="1" repeatto="0" sid="617995918103421" speed="5">
-                    <frame duration="1" hotspotX="0.500867" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.500867" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.500867" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.500867" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.500867" hotspotY="0.5" />
-                </animation>
             </animation-folder>
         </object-type>
         <object-type name="Sprite5" sid="270026204212902">
