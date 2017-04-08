@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <event-block sid="587994569582057">
+            <conditions>
+                <condition id="0" name="On click" sid="261785756077229" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="156042210520514" type="Player">
+                    <param id="0" name="Object">Bullet_</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">Player.X</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="993694617476426">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="689182681630392" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="897560631552753" type="camera">
+                    <param id="0" name="X">player.x</param>
+                    <param id="1" name="Y">player.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="336773340157711">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="690670957297003">
+            <conditions>
+                <condition id="-18" name="On created" sid="544076609058870" type="girl" />
+            </conditions>
+            <actions />
+        </event-block>
+        <event-group description="" sid="985741731479790" title="Enemies" />
+        <event-group description="" sid="924149409876949" title="Movement/Attack" />
+    </events>
+</c2eventsheet>
