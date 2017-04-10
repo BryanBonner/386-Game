@@ -320,8 +320,8 @@
                             <param id="0" name="Visibility">1</param>
                         </action>
                         <action id="-3" name="Set position" sid="528594500575143" type="game_over">
-                            <param id="0" name="X">camera.X - 100</param>
-                            <param id="1" name="Y">camera.Y - 150</param>
+                            <param id="0" name="X">scrollx</param>
+                            <param id="1" name="Y">scrolly</param>
                         </action>
                         <action id="3" name="Set enabled" sid="125372028845741" type="Restart">
                             <param id="0" name="Mode">1</param>

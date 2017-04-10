@@ -474,6 +474,30 @@
         <object-type name="Audio" sid="295053845667363">
             <plugin id="Audio" />
         </object-type>
+        <object-type name="imageedit_1_" sid="381299356122139">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="LineOfSight" sid="686742606315155">
+                    <behavior id="LOS" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="897891956530799" speed="5">
+                    <frame duration="1" hotspotX="0.500684" hotspotY="0.500573" original-source="C:\Users\Riot\Desktop\imageedit_1_2039774455.png">
+                        <collision-poly>
+                            <point x="0.131327" y="0.109966" />
+                            <point x="0.499316" y="0.0618557" />
+                            <point x="0.860465" y="0.116838" />
+                            <point x="0.813953" y="0.499427" />
+                            <point x="0.863201" y="0.885452" />
+                            <point x="0.499316" y="0.647194" />
+                            <point x="0.149111" y="0.875143" />
+                            <point x="0.151847" y="0.499427" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
