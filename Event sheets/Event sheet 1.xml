@@ -35,6 +35,9 @@
                         <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="551363855084427" type="girl">
                             <param id="0" name="Object">Player</param>
                         </condition>
+                        <condition id="-6" name="Every X seconds" sid="355684592900830" type="System">
+                            <param id="0" name="Interval (seconds)">3</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-13" name="Set boolean" sid="919407317632919" type="girl">
@@ -46,36 +49,41 @@
                             <param id="1" name="Layer">2</param>
                             <param id="2" name="Image point">girl.X</param>
                         </action>
-                        <action id="-22" name="Set angle toward position" sid="222364582164089" type="girl">
-                            <param id="0" name="X">player.X</param>
-                            <param id="1" name="Y">player.Y</param>
-                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="493689179170047">
-                    <conditions />
-                    <actions />
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="885761033750300" type="girl" />
+                        <condition id="-1" name="Every tick" sid="649336033686709" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-22" name="Set angle toward position" sid="387150179434139" type="girl">
+                            <param id="0" name="X">Player.X</param>
+                            <param id="1" name="Y">Player.Y</param>
+                        </action>
+                        <action id="8" name="Set flipped" sid="611028694368607" type="girl">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="973713455502914" type="girl">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
                 </event-block>
                 <event-block sid="489583959351411">
                     <conditions>
                         <condition id="-18" name="On created" sid="674589916133548" type="Fireball" />
                     </conditions>
                     <actions>
-                        <action behavior="Bullet" id="1" name="Set acceleration" sid="531046229011836" type="Fireball">
-                            <param id="0" name="Acceleration">floor(random(200, 600))</param>
-                        </action>
                         <action behavior="Bullet" id="0" name="Set speed" sid="135618111225989" type="Fireball">
-                            <param id="0" name="Speed">floor(random(200, 600))</param>
+                            <param id="0" name="Speed">floor(200)</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="480127857858117" type="Fireball">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="8" name="Set flipped" sid="277718592429965" type="Fireball">
+                            <param id="0" name="State">0</param>
                         </action>
                     </actions>
-                </event-block>
-                <event-block sid="185125117624755">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="103279738076643" type="SpawnPoint">
-                            <param id="0" name="Object">Player</param>
-                        </condition>
-                    </conditions>
-                    <actions />
                 </event-block>
             </sub-events>
         </event-group>
@@ -246,6 +254,9 @@
                         <condition id="0" name="On collision with another object" sid="957444026636349" type="BG_DEATH">
                             <param id="0" name="Object">Player</param>
                         </condition>
+                        <condition id="0" name="On collision with another object" sid="397213528818277" type="Fireball">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="4" name="Set animation" sid="180376286881842" type="Player">
@@ -358,6 +369,17 @@
                     <param id="0" name="Pin to">Ground</param>
                     <param id="1" name="Mode">0</param>
                 </action>
+            </actions>
+        </event-block>
+        <event-block sid="594053089018644">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="926148867045855" type="girl">
+                    <param id="0" name="Object">Bullet_</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="552413882618646" type="girl" />
+                <action id="-9" name="Destroy" sid="187449646820152" type="Bullet_" />
             </actions>
         </event-block>
     </events>

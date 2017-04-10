@@ -64,6 +64,9 @@
                 <behavior-type name="Pin" sid="274704939138023">
                     <behavior id="Pin" />
                 </behavior-type>
+                <behavior-type name="Solid" sid="302121706617488">
+                    <behavior id="solid" />
+                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="995752532649797" speed="5">
@@ -263,9 +266,6 @@
                 <behavior-type name="LineOfSight" sid="360999198219635">
                     <behavior id="LOS" />
                 </behavior-type>
-                <behavior-type name="Bullet" sid="256703130657902">
-                    <behavior id="Bullet" />
-                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="836660868892684" speed="5">
@@ -335,6 +335,11 @@
         </object-type>
         <object-type name="Platform" sid="869106403402569">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Jumpthru" sid="313772554381182">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="194345882863016" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.505376" original-source="C:\Users\Brian\Desktop\386-Game\sprites\background\png\Tile\15.png">
@@ -405,6 +410,11 @@
         </object-type>
         <object-type name="Brick" sid="930716827945074">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="606639758386700">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="890104570151407" speed="5">
                     <frame duration="1" hotspotX="0.504951" hotspotY="0.50505" original-source="C:\Users\Brian\Desktop\386-Game\sprites\background\png\Objects\StoneBlock.png">
@@ -440,22 +450,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="SOLID" sid="812967423246324">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Solid" sid="446119422975606">
-                    <behavior id="solid" />
-                </behavior-type>
-                <behavior-type name="Jumpthru" sid="797787718000949">
-                    <behavior id="jumpthru" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="768782292442866" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Brian\Desktop\386-Game\sprites\background\png\black.png" />
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="game_over" sid="989500018247114">
             <plugin id="Text" />
         </object-type>
@@ -470,21 +464,6 @@
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="939425317433295" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Brian\Desktop\386-Game\sprites\background\png\black.png" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="SpawnPoint" sid="223001351389758">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="265314180752246" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <collision-poly>
-                            <point x="0.164" y="0" />
-                            <point x="0.22" y="0" />
-                            <point x="0.212" y="1" />
-                            <point x="0.164" y="1" />
-                        </collision-poly>
-                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
