@@ -633,6 +633,7 @@
                         <HasCollided>false</HasCollided>
                         <NotCollided>true</NotCollided>
                         <isDead>false</isDead>
+                        <hasWon>false</hasWon>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -776,6 +777,9 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <attackMode>false</attackMode>
+                    </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="LineOfSight">
                             <properties>
@@ -783,6 +787,16 @@
                                 <range>400</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Bullet">
+                            <properties>
+                                <speed>300</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>Yes</set-angle>
+                                <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
@@ -2023,6 +2037,7 @@
                         <HasCollided>false</HasCollided>
                         <NotCollided>true</NotCollided>
                         <isDead>false</isDead>
+                        <hasWon>false</hasWon>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -2284,30 +2299,6 @@
                         <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="Restart" uid="92">
-                    <properties>
-                        <type>Button</type>
-                        <text>Restart</text>
-                        <tooltip></tooltip>
-                        <initial-visibility>Invisible</initial-visibility>
-                        <enabled>No</enabled>
-                        <auto-font-size>Yes</auto-font-size>
-                        <id-optional></id-optional>
-                        <checked>No</checked>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>184.447845459</x>
-                        <y>244.643768311</y>
-                        <z>0</z>
-                        <width>72</width>
-                        <height>24</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
                     </world>
                 </instance>
                 <instance type="BG_DEATH" uid="93">
@@ -2850,6 +2841,233 @@
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>0</opacity>
+                    </world>
+                </instance>
+                <instance type="SpawnPoint" uid="111">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>612.56463623</x>
+                        <y>262.308898926</y>
+                        <z>0</z>
+                        <width>106.059875488</width>
+                        <height>490.465484619</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="SpawnPoint" uid="112">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1012.444641113</x>
+                        <y>296.460296631</y>
+                        <z>0</z>
+                        <width>106.059875488</width>
+                        <height>441.356567383</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="SpawnPoint" uid="113">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1421.375244141</x>
+                        <y>297.588867188</y>
+                        <z>0</z>
+                        <width>106.059875488</width>
+                        <height>441.356567383</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="SpawnPoint" uid="114">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1685.144897461</x>
+                        <y>297.588897705</y>
+                        <z>0</z>
+                        <width>106.059875488</width>
+                        <height>441.356567383</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="SpawnPoint" uid="115">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>2263.462158203</x>
+                        <y>244.386352539</y>
+                        <z>0</z>
+                        <width>106.059875488</width>
+                        <height>509.375732422</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="SpawnPoint" uid="116">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>3007.342285156</x>
+                        <y>215.175476074</y>
+                        <z>0</z>
+                        <width>106.059875488</width>
+                        <height>441.356567383</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="SpawnPoint" uid="117">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>3312.416503906</x>
+                        <y>203.886077881</y>
+                        <z>0</z>
+                        <width>106.059875488</width>
+                        <height>441.356567383</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Restart" uid="92">
+                    <properties>
+                        <type>Button</type>
+                        <text>Restart</text>
+                        <tooltip></tooltip>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <enabled>No</enabled>
+                        <auto-font-size>Yes</auto-font-size>
+                        <id-optional></id-optional>
+                        <checked>No</checked>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>184.447845459</x>
+                        <y>244.643768311</y>
+                        <z>0</z>
+                        <width>72</width>
+                        <height>24</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                    </world>
+                </instance>
+                <instance type="SpawnPoint" uid="110">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>184.411514282</x>
+                        <y>262.873779297</y>
+                        <z>0</z>
+                        <width>106.059875488</width>
+                        <height>488.772583008</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="victory_text" uid="118">
+                    <properties>
+                        <text>YOU WIN!!!!!!</text>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <font>Arial,-16</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>4033.304443359</x>
+                        <y>148.567321777</y>
+                        <z>0</z>
+                        <width>110.81350708</width>
+                        <height>30</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
                     </world>
                 </instance>
             </instances>

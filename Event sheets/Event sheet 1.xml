@@ -36,6 +36,45 @@
                             <param id="0" name="Object">Player</param>
                         </condition>
                     </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="919407317632919" type="girl">
+                            <param id="0" name="Instance variable">attackMode</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="692533590579928" type="girl">
+                            <param id="0" name="Object">Fireball</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="Image point">girl.X</param>
+                        </action>
+                        <action id="-22" name="Set angle toward position" sid="222364582164089" type="girl">
+                            <param id="0" name="X">player.X</param>
+                            <param id="1" name="Y">player.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="493689179170047">
+                    <conditions />
+                    <actions />
+                </event-block>
+                <event-block sid="489583959351411">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="674589916133548" type="Fireball" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="1" name="Set acceleration" sid="531046229011836" type="Fireball">
+                            <param id="0" name="Acceleration">floor(random(200, 600))</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="135618111225989" type="Fireball">
+                            <param id="0" name="Speed">floor(random(200, 600))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="185125117624755">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="103279738076643" type="SpawnPoint">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
                     <actions />
                 </event-block>
             </sub-events>
@@ -242,8 +281,8 @@
                             <param id="0" name="Visibility">1</param>
                         </action>
                         <action id="-3" name="Set position" sid="528594500575143" type="game_over">
-                            <param id="0" name="X">player.X - 200</param>
-                            <param id="1" name="Y">player.Y-200</param>
+                            <param id="0" name="X">camera.X - 100</param>
+                            <param id="1" name="Y">camera.Y - 150</param>
                         </action>
                         <action id="3" name="Set enabled" sid="125372028845741" type="Restart">
                             <param id="0" name="Mode">1</param>
@@ -264,6 +303,46 @@
                     </conditions>
                     <actions>
                         <action id="-26" name="Restart layout" sid="718809621361808" type="System" />
+                    </actions>
+                </event-block>
+                <event-block sid="607713117261829">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="414635379023148" type="Player">
+                            <param id="0" name="Object">Fireball</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="908456830830066" type="Player">
+                            <param id="0" name="Instance variable">isDead</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="586795202275429">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="234757830057922" type="Player">
+                            <param id="0" name="Instance variable">hasWon</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="508339902602345" type="victory_text">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="752021950433480" type="victory_text">
+                            <param id="0" name="X">camera.X - 100</param>
+                            <param id="1" name="Y">camera.Y - 150</param>
+                        </action>
+                        <action id="3" name="Set enabled" sid="392279694198458" type="Restart">
+                            <param id="0" name="Mode">1</param>
+                        </action>
+                        <action id="2" name="Set visible" sid="986363887113912" type="Restart">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="4" name="Set focused" sid="313854791511567" type="Restart" />
+                        <action id="-3" name="Set position" sid="222125070287685" type="Restart">
+                            <param id="0" name="X">victory_text.X + 50</param>
+                            <param id="1" name="Y">victory_text.Y + 50</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>

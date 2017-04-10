@@ -98,6 +98,7 @@
                 <instance-variable name="HasCollided" sid="633071932268772" type="boolean" />
                 <instance-variable name="NotCollided" sid="970062517862611" type="boolean" />
                 <instance-variable name="isDead" sid="932478679573594" type="boolean" />
+                <instance-variable name="hasWon" sid="142209844348059" type="boolean" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="114741509832375">
@@ -255,9 +256,15 @@
         </object-type>
         <object-type name="girl" sid="514372240576005">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="attackMode" sid="425499628094762" type="boolean" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="LineOfSight" sid="360999198219635">
                     <behavior id="LOS" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="256703130657902">
+                    <behavior id="Bullet" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -465,6 +472,24 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Brian\Desktop\386-Game\sprites\background\png\black.png" />
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="SpawnPoint" sid="223001351389758">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="265314180752246" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.164" y="0" />
+                            <point x="0.22" y="0" />
+                            <point x="0.212" y="1" />
+                            <point x="0.164" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="victory_text" sid="411557565994876">
+            <plugin id="Text" />
         </object-type>
     </object-folder>
     <families />
