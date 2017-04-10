@@ -458,6 +458,14 @@
         <object-type name="Restart" sid="106735546177628">
             <plugin id="Button" />
         </object-type>
+        <object-type name="BG_DEATH" sid="465663780914957">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="939425317433295" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Brian\Desktop\386-Game\sprites\background\png\black.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>

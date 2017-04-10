@@ -199,9 +199,12 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="590811548537741">
+                <event-block any="1" sid="590811548537741">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="113289981397046" type="girl">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="957444026636349" type="BG_DEATH">
                             <param id="0" name="Object">Player</param>
                         </condition>
                     </conditions>
