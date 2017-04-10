@@ -10,12 +10,15 @@
     <unique-id>2m2oqhlgof90t</unique-id>
     <saved-with-version>24300</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
@@ -58,9 +61,6 @@
         <object-type name="Ground" sid="960620862760096">
             <plugin id="Sprite" />
             <behaviors>
-                <behavior-type name="Solid" sid="239291354791555">
-                    <behavior id="solid" />
-                </behavior-type>
                 <behavior-type name="Pin" sid="274704939138023">
                     <behavior id="Pin" />
                 </behavior-type>
@@ -92,33 +92,70 @@
         </object-type>
         <object-type name="Player" sid="379530149175130">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="FacingRight" sid="488353106432217" type="boolean" />
+                <instance-variable name="FacingLeft" sid="220660882195431" type="boolean" />
+                <instance-variable name="HasCollided" sid="633071932268772" type="boolean" />
+                <instance-variable name="NotCollided" sid="970062517862611" type="boolean" />
+                <instance-variable name="isDead" sid="932478679573594" type="boolean" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="114741509832375">
                     <behavior id="Platform" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="9" loop="0" name="run" pingpong="0" repeatcount="1" repeatto="0" sid="951510167906953" speed="5">
+                <animation framecount="1" loop="0" name="idle" pingpong="0" repeatcount="1" repeatto="0" sid="951510167906953" speed="5">
                     <frame duration="1" hotspotX="0.500882" hotspotY="0.5" original-source="C:\Users\Bryan\Desktop\386 Project\robot png\Idle (1).png">
                         <collision-poly>
                             <point x="0.283951" y="0.289568" />
-                            <point x="0.499118" y="0.0989209" />
-                            <point x="0.643739" y="0.363309" />
-                            <point x="0.599647" y="0.5" />
+                            <point x="0.460317" y="0.0809353" />
+                            <point x="0.638448" y="0.262589" />
+                            <point x="0.601411" y="0.483813" />
                             <point x="0.636684" y="0.629496" />
-                            <point x="0.499118" y="0.758993" />
-                            <point x="0.29806" y="0.696043" />
-                            <point x="0.282187" y="0.5" />
+                            <point x="0.712519" y="0.935253" />
+                            <point x="0.225749" y="0.92626" />
+                            <point x="0.243386" y="0.521583" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.500761" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.500761" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.500761" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.500761" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.500761" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.500761" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.500761" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.500761" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="left" pingpong="0" repeatcount="1" repeatto="0" sid="435951680538503" speed="5">
+                    <frame duration="1" hotspotX="0.499118" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.76896" y="0.926259" />
+                            <point x="0.301587" y="0.928058" />
+                            <point x="0.421517" y="0.131295" />
+                            <point x="0.710759" y="0.118705" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="jump" pingpong="0" repeatcount="1" repeatto="0" sid="406081682604205" speed="5">
+                    <frame duration="1" hotspotX="0.500882" hotspotY="0.5" original-source="C:\Users\Riot\Desktop\SPRING 17\CPSC 386\Project\386-Game\sprites\robot png\Jump (3).png">
+                        <collision-poly>
+                            <point x="0.477954" y="0.0827338" />
+                            <point x="0.777778" y="0.447842" />
+                            <point x="0.656085" y="0.901079" />
+                            <point x="0.194004" y="0.899281" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="3" loop="0" name="walk" pingpong="0" repeatcount="1" repeatto="0" sid="391537575535169" speed="5">
+                    <frame duration="1" hotspotX="0.500882" hotspotY="0.5" original-source="C:\Users\Riot\Desktop\SPRING 17\CPSC 386\Project\386-Game\sprites\robot png\Run (2).png" />
+                    <frame duration="1" hotspotX="0.500882" hotspotY="0.5" original-source="C:\Users\Riot\Desktop\SPRING 17\CPSC 386\Project\386-Game\sprites\robot png\Run (4).png" />
+                    <frame duration="1" hotspotX="0.500882" hotspotY="0.5" original-source="C:\Users\Riot\Desktop\SPRING 17\CPSC 386\Project\386-Game\sprites\robot png\Idle (1).png" />
+                </animation>
+                <animation framecount="2" loop="0" name="shoot" pingpong="0" repeatcount="1" repeatto="0" sid="258598005465456" speed="5">
+                    <frame duration="1" hotspotX="0.500882" hotspotY="0.5" original-source="C:\Users\Riot\Desktop\SPRING 17\CPSC 386\Project\386-Game\sprites\robot png\RunShoot (2).png" />
+                    <frame duration="1" hotspotX="0.500882" hotspotY="0.5" original-source="C:\Users\Riot\Desktop\SPRING 17\CPSC 386\Project\386-Game\sprites\robot png\Idle (1).png" />
+                </animation>
+                <animation framecount="7" loop="0" name="die" pingpong="0" repeatcount="1" repeatto="0" sid="499042651516792" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500963" original-source="C:\Users\Riot\Desktop\SPRING 17\CPSC 386\Project\386-Game\sprites\robot png\Dead (1).png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500963" original-source="C:\Users\Riot\Desktop\SPRING 17\CPSC 386\Project\386-Game\sprites\robot png\Dead (2).png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500963" original-source="C:\Users\Riot\Desktop\SPRING 17\CPSC 386\Project\386-Game\sprites\robot png\Dead (3).png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500963" original-source="C:\Users\Riot\Desktop\SPRING 17\CPSC 386\Project\386-Game\sprites\robot png\Dead (4).png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500963" original-source="C:\Users\Riot\Desktop\SPRING 17\CPSC 386\Project\386-Game\sprites\robot png\Dead (5).png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500963" original-source="C:\Users\Riot\Desktop\SPRING 17\CPSC 386\Project\386-Game\sprites\robot png\Dead (6).png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500963" original-source="C:\Users\Riot\Desktop\SPRING 17\CPSC 386\Project\386-Game\sprites\robot png\Dead (7).png" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -218,9 +255,26 @@
         </object-type>
         <object-type name="girl" sid="514372240576005">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="LineOfSight" sid="360999198219635">
+                    <behavior id="LOS" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="836660868892684" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.617371" hotspotY="0.771552">
+                        <image-point name="Imagepoint 1" x="0.488263" y="0.94181" />
+                        <collision-poly>
+                            <point x="0.751174" y="0.756466" />
+                            <point x="0.565728" y="0.801724" />
+                            <point x="0.511737" y="0.987069" />
+                            <point x="0.33568" y="0.978449" />
+                            <point x="0.161972" y="0.4375" />
+                            <point x="0.178404" y="0.185345" />
+                            <point x="0.530516" y="0.0581897" />
+                            <point x="0.7277" y="0.25" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -241,8 +295,13 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Sprite7" sid="114478893845135">
+        <object-type name="Fireball" sid="114478893845135">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="254994644826281">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="521440976580740" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.502538" original-source="C:\Users\Bryan\Desktop\386 Project\Start\sprites\girl\pink\keyframes\1.png">
@@ -269,14 +328,16 @@
         </object-type>
         <object-type name="Platform" sid="869106403402569">
             <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Jumpthru" sid="967309392065962">
-                    <behavior id="jumpthru" />
-                </behavior-type>
-            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="194345882863016" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.505376" original-source="C:\Users\Brian\Desktop\386-Game\sprites\background\png\Tile\15.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505376" original-source="C:\Users\Brian\Desktop\386-Game\sprites\background\png\Tile\15.png">
+                        <collision-poly>
+                            <point x="0.015625" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -371,6 +432,31 @@
                     </frame>
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="SOLID" sid="812967423246324">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="446119422975606">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Jumpthru" sid="797787718000949">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="768782292442866" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Brian\Desktop\386-Game\sprites\background\png\black.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="game_over" sid="989500018247114">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="died_to_a_girl" sid="794774480840839">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Restart" sid="106735546177628">
+            <plugin id="Button" />
         </object-type>
     </object-folder>
     <families />
