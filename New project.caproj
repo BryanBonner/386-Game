@@ -10,6 +10,7 @@
     <unique-id>2m2oqhlgof90t</unique-id>
     <saved-with-version>24300</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
@@ -470,6 +471,9 @@
         <object-type name="victory_text" sid="411557565994876">
             <plugin id="Text" />
         </object-type>
+        <object-type name="Audio" sid="295053845667363">
+            <plugin id="Audio" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -481,9 +485,39 @@
     <global-instances>
         <global-instance type="Keyboard" uid="8" />
         <global-instance type="Mouse" uid="9" />
+        <global-instance type="Audio" uid="99">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
     </global-instances>
-    <sounds-folder />
-    <music-folder />
+    <sounds-folder>
+        <file name="Girl_Death.m4a" />
+        <file name="Girl_Laser.m4a" />
+        <file name="Robot_Death.m4a" />
+        <file name="Robot_Laser.m4a" />
+        <file name="Zombie_Colide.m4a" />
+        <file name="Zombie_Death.m4a" />
+        <file name="Girl_Death.ogg" />
+        <file name="Girl_Laser.ogg" />
+        <file name="Robot_Death.ogg" />
+        <file name="Robot_Laser.ogg" />
+        <file name="Zombie_Colide.ogg" />
+        <file name="Zombie_Death.ogg" />
+    </sounds-folder>
+    <music-folder>
+        <file name="Background_Music.m4a" />
+        <file name="Background_Music.ogg" />
+    </music-folder>
     <files-folder>
         <file-folder name="Icons">
             <file name="icon-16.png" />

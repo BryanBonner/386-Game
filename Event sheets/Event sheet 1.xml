@@ -49,6 +49,12 @@
                             <param id="1" name="Layer">2</param>
                             <param id="2" name="Image point">girl.X</param>
                         </action>
+                        <action id="0" name="Play" sid="339458082582218" type="Audio">
+                            <param id="0" name="Audio file">Girl_Laser</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="493689179170047">
@@ -219,6 +225,12 @@
                             <param id="0" name="Animation">&quot;shoot&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
+                        <action id="0" name="Play" sid="618568203658164" type="Audio">
+                            <param id="0" name="Audio file">Robot_Laser</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="738421311683748">
@@ -243,6 +255,12 @@
                         <action id="4" name="Set animation" sid="855481902871716" type="Player">
                             <param id="0" name="Animation">&quot;shoot&quot;</param>
                             <param id="1" name="From">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="741987459565322" type="Audio">
+                            <param id="0" name="Audio file">Robot_Laser</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -275,6 +293,16 @@
                             <param id="0" name="Instance variable">isDead</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action id="0" name="Play" sid="647427456452710" type="Audio">
+                            <param id="0" name="Audio file">Robot_Death</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="6" name="Stop" sid="560401840497510" type="Audio">
+                            <param id="0" name="Tag">&quot;music&quot;</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="649365408374778" type="Fireball" />
                     </actions>
                 </event-block>
                 <event-block any="1" sid="552660935897373">
@@ -314,19 +342,6 @@
                     </conditions>
                     <actions>
                         <action id="-26" name="Restart layout" sid="718809621361808" type="System" />
-                    </actions>
-                </event-block>
-                <event-block sid="607713117261829">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="414635379023148" type="Player">
-                            <param id="0" name="Object">Fireball</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-13" name="Set boolean" sid="908456830830066" type="Player">
-                            <param id="0" name="Instance variable">isDead</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="586795202275429">
@@ -380,6 +395,25 @@
             <actions>
                 <action id="-9" name="Destroy" sid="552413882618646" type="girl" />
                 <action id="-9" name="Destroy" sid="187449646820152" type="Bullet_" />
+                <action id="0" name="Play" sid="353525696122742" type="Audio">
+                    <param id="0" name="Audio file">Girl_Death</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="957692558043468">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="648071959669389" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="601184417666804" type="Audio">
+                    <param id="0" name="Audio file">Background_Music</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;music&quot;</param>
+                </action>
             </actions>
         </event-block>
     </events>
