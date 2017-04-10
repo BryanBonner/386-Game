@@ -14,7 +14,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <event-sheet active="1" order="1">Event sheet 1</event-sheet>
     </open-tabs>
     <properties>
-        <property expanded="0" name="About" />
+        <property expanded="1" name="About" />
         <property expanded="1" name="Project settings" />
         <property expanded="0" name="Window Size" />
         <property expanded="1" name="Configuration Settings" />
@@ -27,27 +27,25 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="file-folder/" />
         <folder expanded="1" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />
-        <folder expanded="1" path="file-folder/Icons/" />
+        <folder expanded="0" path="file-folder/Icons/" />
         <folder expanded="1" path="animation-folder/BG/" />
-        <folder expanded="1" path="animation-folder/Ground/" />
+        <folder expanded="1" path="animation-folder/Sprite/" />
+        <folder expanded="1" path="animation-folder/Sprite2/" />
+        <folder expanded="1" path="animation-folder/Sprite3/" />
         <folder expanded="1" path="animation-folder/runspritesheet/" />
         <folder expanded="1" path="animation-folder/Player/" />
+        <folder expanded="1" path="animation-folder/Sprite4/" />
         <folder expanded="1" path="animation-folder/Bullet_/" />
         <folder expanded="1" path="animation-folder/camera/" />
+        <folder expanded="1" path="animation-folder/Sprite5/" />
+        <folder expanded="1" path="animation-folder/Sprite6/" />
         <folder expanded="1" path="animation-folder/Bush/" />
         <folder expanded="1" path="animation-folder/FinalBoss/" />
         <folder expanded="1" path="animation-folder/girlspritesheet/" />
         <folder expanded="1" path="animation-folder/girl/" />
         <folder expanded="1" path="animation-folder/pinkfireball/" />
-        <folder expanded="1" path="animation-folder/Fireball/" />
-        <folder expanded="1" path="animation-folder/BG_Black/" />
-        <folder expanded="1" path="animation-folder/Platform/" />
-        <folder expanded="1" path="animation-folder/tree/" />
-        <folder expanded="1" path="animation-folder/Cactus/" />
-        <folder expanded="1" path="animation-folder/Sign/" />
-        <folder expanded="1" path="animation-folder/Brick/" />
-        <folder expanded="1" path="animation-folder/Skeleton/" />
-        <folder expanded="1" path="animation-folder/BG_DEATH/" />
-        <folder expanded="1" path="animation-folder/imageedit_1_/" />
+        <folder expanded="1" path="animation-folder/Sprite7/" />
+        <folder expanded="1" path="animation-folder/bossLaser/" />
+        <folder expanded="1" path="animation-folder/Sprite8/" />
     </folders-expanded>
 </c2uistate>
