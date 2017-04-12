@@ -355,8 +355,8 @@
                             <param id="0" name="Visibility">1</param>
                         </action>
                         <action id="-3" name="Set position" sid="752021950433480" type="victory_text">
-                            <param id="0" name="X">camera.X - 100</param>
-                            <param id="1" name="Y">camera.Y - 150</param>
+                            <param id="0" name="X">scrollx</param>
+                            <param id="1" name="Y">scrolly</param>
                         </action>
                         <action id="3" name="Set enabled" sid="392279694198458" type="Restart">
                             <param id="0" name="Mode">1</param>
@@ -371,9 +371,108 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="509176580531801">
+                    <conditions>
+                        <condition behavior="Bullet" id="1" name="Compare distance travelled" sid="886877217141951" type="Bullet_">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Distance">300</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="603412552125580" type="Bullet_" />
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="853090995758893" title="Final Boss" />
+        <event-group description="" sid="853090995758893" title="Final Boss">
+            <sub-events>
+                <event-block sid="440227764514488">
+                    <conditions>
+                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="595228395152702" type="FINAL_BOSS">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="181783894518583" type="System">
+                            <param id="0" name="Interval (seconds)">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="226624858629444" type="FINAL_BOSS">
+                            <param id="0" name="Object">Fireball</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="Image point">FINAL_BOSS.X</param>
+                        </action>
+                        <action id="0" name="Play" sid="651172152774800" type="Audio">
+                            <param id="0" name="Audio file">Robot_Laser</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="338211551997931">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="246872051998822" type="FINAL_BOSS" />
+                        <condition id="-1" name="Every tick" sid="326572515949599" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-22" name="Set angle toward position" sid="155583132524983" type="FINAL_BOSS">
+                            <param id="0" name="X">player.X</param>
+                            <param id="1" name="Y">player.Y</param>
+                        </action>
+                        <action id="8" name="Set flipped" sid="132685294631848" type="FINAL_BOSS">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="923838739604870">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="678751303349578" type="FINAL_BOSS">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="252891423462029" type="Player">
+                            <param id="0" name="Instance variable">isDead</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="440624061486845">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="280921442197120" type="FINAL_BOSS">
+                            <param id="0" name="Object">Bullet_</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="529117790901123" type="FINAL_BOSS">
+                            <param id="0" name="Instance variable">numOfLives</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="771939956440355" type="FINAL_BOSS">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.4</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="166024896763388">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="158418609920404" type="FINAL_BOSS">
+                            <param id="0" name="Instance variable">numOfLives</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="518298425438628" type="FINAL_BOSS" />
+                        <action id="-13" name="Set boolean" sid="897221793808029" type="Player">
+                            <param id="0" name="Instance variable">hasWon</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="776711612629645" title="Background/Platforms" />
         <event-block sid="297038520532430">
             <conditions>

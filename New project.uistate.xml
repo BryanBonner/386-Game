@@ -48,6 +48,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Brick/" />
         <folder expanded="1" path="animation-folder/Skeleton/" />
         <folder expanded="1" path="animation-folder/BG_DEATH/" />
-        <folder expanded="1" path="animation-folder/imageedit_1_/" />
+        <folder expanded="1" path="animation-folder/FINAL_BOSS/" />
     </folders-expanded>
 </c2uistate>

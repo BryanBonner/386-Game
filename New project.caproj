@@ -19,9 +19,11 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="custom" version="1">Custom Movement</behavior>
         <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
@@ -474,11 +476,20 @@
         <object-type name="Audio" sid="295053845667363">
             <plugin id="Audio" />
         </object-type>
-        <object-type name="imageedit_1_" sid="381299356122139">
+        <object-type name="FINAL_BOSS" sid="381299356122139">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="numOfLives" sid="644678595904086" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="LineOfSight" sid="686742606315155">
                     <behavior id="LOS" />
+                </behavior-type>
+                <behavior-type name="CustomMovement" sid="340957292456319">
+                    <behavior id="custom" />
+                </behavior-type>
+                <behavior-type name="Flash" sid="886063386075084">
+                    <behavior id="Flash" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
